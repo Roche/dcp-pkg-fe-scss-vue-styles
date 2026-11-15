@@ -1,0 +1,32 @@
+@use '@open-dcp/styles/src/abstracts/variables' as *;
+
+$dcp-form-group-gap: $spacer !default;
+$dcp-form-group-padding: $spacer !default;
+$dcp-form-group-border-radius: 4px !default;
+$dcp-form-group-section-gap: 12px !default;
+
+.dcp-form_group {
+  display: flex;
+  flex-direction: column;
+  gap: $dcp-form-group-section-gap;
+  width: 100%;
+
+  &--with-header {
+    background: rgb(var(--v-theme-surface, 255 255 255));
+    border-radius: $dcp-form-group-border-radius;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
+    padding: $dcp-form-group-padding;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__content {
+    display: grid;
+    gap: $dcp-form-group-gap;
+  }
+}
+

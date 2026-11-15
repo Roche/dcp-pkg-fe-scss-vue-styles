@@ -1,0 +1,22 @@
+@use '@open-dcp/styles/src/abstracts/variables' as *;
+
+.v-switch {
+    .v-selection-control__input::before {
+        display: none;
+    }
+    .v-ripple__container {
+        opacity: .1;
+    }
+    .v-switch__thumb {
+        background: $gxp-red;
+    }
+    input[checked] ~ .v-switch__thumb {
+        background: $gxp-green;
+    }
+    .v-switch__track {
+        background: rgba($gxp-red, .5);
+    }
+    .v-switch__track:has( + .v-selection-control__input input[checked]) {
+        background: rgba($gxp-green, .5);
+    }
+}

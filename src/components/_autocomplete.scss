@@ -1,0 +1,51 @@
+@use '@open-dcp/styles/src/abstracts/variables' as *;
+
+.dcp-input {
+  position: relative;
+
+  // Input field
+  input {
+    padding-left: 4px;
+  }
+
+  // Label
+  .v-label {
+    color: var(--dcp-branding-primary-color, #{$branding-primary-color});
+    transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    text-transform: uppercase;
+    opacity: 1;
+    margin-left: 4px;
+  }
+
+  // Error message
+  .dcp-input__error-message {
+    font-size: $font-size-sm;
+    color: $danger-color;
+    margin-top: $spacer-half;
+  }
+
+  // Disabled state
+  &.disabled {
+    input {
+      background-color: $disabled-color;
+      cursor: not-allowed;
+    }
+
+    label {
+      color: $text-color-disabled;
+    }
+  }
+}
+
+.v-textarea {
+  textarea {
+    padding-left: 4px;
+  }
+  .v-label {
+    color: var(--dcp-branding-primary-color, #{$branding-primary-color});
+    transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    text-transform: uppercase;
+    opacity: 1;
+    margin-left: 0;
+  }
+}

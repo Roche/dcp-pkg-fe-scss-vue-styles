@@ -1,0 +1,103 @@
+{
+  "name": "@open-dcp/vue-styles",
+  "version": "0.2.1",
+  "main": "dist/index.css",
+  "style": "dist/index.css",
+  "exports": {
+    ".": {
+      "import": "./dist/index.css",
+      "default": "./dist/index.css"
+    },
+    "./scss": {
+      "import": "./src/index.scss",
+      "default": "./src/index.scss"
+    },
+    "./scss/button": {
+      "import": "./src/components/button.scss",
+      "default": "./src/components/button.scss"
+    },
+    "./scss/dropdown": {
+      "import": "./src/components/dropdown.scss",
+      "default": "./src/components/dropdown.scss"
+    },
+    "./scss/input": {
+      "import": "./src/components/input.scss",
+      "default": "./src/components/input.scss"
+    },
+    "./scss/gxp-status": {
+      "import": "./src/components/gxp-status.scss",
+      "default": "./src/components/gxp-status.scss"
+    },
+    "./scss/form-group": {
+      "import": "./src/components/form-group.scss",
+      "default": "./src/components/form-group.scss"
+    },
+    "./scss/form-array": {
+      "import": "./src/components/form-array.scss",
+      "default": "./src/components/form-array.scss"
+    },
+    "./scss/form-generator": {
+      "import": "./src/components/form-generator.scss",
+      "default": "./src/components/form-generator.scss"
+    },
+    "./css/button": {
+      "import": "./dist/components/button.css",
+      "default": "./dist/components/button.css"
+    },
+    "./css/dropdown": {
+      "import": "./dist/components/dropdown.css",
+      "default": "./dist/components/dropdown.css"
+    },
+    "./css/input": {
+      "import": "./dist/components/input.css",
+      "default": "./dist/components/input.css"
+    },
+    "./css/gxp-status": {
+      "import": "./dist/components/gxp-status.css",
+      "default": "./dist/components/gxp-status.css"
+    },
+    "./css/form-group": {
+      "import": "./dist/components/form-group.css",
+      "default": "./dist/components/form-group.css"
+    },
+    "./css/form-array": {
+      "import": "./dist/components/form-array.css",
+      "default": "./dist/components/form-array.css"
+    },
+    "./css/form-generator": {
+      "import": "./dist/components/form-generator.css",
+      "default": "./dist/components/form-generator.css"
+    },
+    "./scss/variables": {
+      "import": "./src/abstracts/variables.scss",
+      "default": "./src/abstracts/variables.scss"
+    }
+  },
+  "files": [
+    "dist",
+    "dist/components",
+    "src"
+  ],
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "chokidar 'src/**/*.scss' -c 'npm run build'",
+    "build": "sass --load-path=node_modules --no-source-map src/index.scss dist/index.css && cp src/index.scss dist/index.scss && npm run build:components",
+    "build:components": "sass --load-path=node_modules --no-source-map src/components:dist/components"
+  },
+  "peerDependencies": {
+    "@open-dcp/styles": ">=0.1.27"
+  },
+  "dependencies": {
+    "sass": "^1.83.0"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Roche/dcp-pkg-fe-scss-vue-styles.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

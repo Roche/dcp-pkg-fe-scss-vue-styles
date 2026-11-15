@@ -1,0 +1,59 @@
+.dcp-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #e0e0e0;
+    border-radius: 16px;
+    margin: 4px;
+    cursor: default;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        background-color: #d6d6d6;
+    }
+
+    &.editable {
+        cursor: text;
+    }
+
+    &.removable:hover {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .chip-content {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .chip-edit {
+        border: none;
+        outline: none;
+        background: transparent;
+        width: 100%;
+        font: inherit;
+        padding: 0;
+        margin: 0;
+    }
+
+    .chip-close {
+        margin-left: 8px;
+        background: none;
+        border: none;
+        font-size: 16px;
+        line-height: 1;
+        cursor: pointer;
+        color: #888;
+
+        &:hover {
+            color: #000;
+        }
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+}

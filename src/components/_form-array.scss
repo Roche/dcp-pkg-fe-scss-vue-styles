@@ -1,0 +1,82 @@
+@use '@open-dcp/styles/src/abstracts/variables' as *;
+
+$dcp-form-array-padding-left: 0 !default;
+$dcp-form-array-padding-right: 0 !default;
+$dcp-form-array-element-gap: 20px !default;
+$dcp-form-array-element-padding-right: 20px !default;
+$dcp-form-array-form-gap: 30px !default;
+$dcp-form-array-form-grid-columns: repeat(auto-fit, 260px) !default;
+$dcp-form-array-button-size: 36px !default;
+$dcp-form-array-button-icon-size: 18px !default;
+$dcp-form-array-error-margin-left: 20px !default;
+$dcp-form-array-error-margin-right: auto !default;
+
+.dcp-form_array {
+  display: block;
+  width: 100%;
+  padding-left: $dcp-form-array-padding-left;
+  padding-right: $dcp-form-array-padding-right;
+
+  .dcp-form_array_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dcp-form_array_element {
+    .dcp-form_array_element_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-grow: 1;
+      padding-right: $dcp-form-array-element-padding-right;
+    }
+
+    .dcp-form_array_element_content {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: $dcp-form-array-element-gap;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+  }
+
+  .dcp-form_array_form {
+    display: grid;
+    gap: $dcp-form-array-form-gap;
+    grid-template-columns: $dcp-form-array-form-grid-columns;
+    grid-template-rows: auto;
+  }
+
+  .dcp-form_array_button_remove {
+    button {
+      min-width: $dcp-form-array-button-size !important;
+      width: $dcp-form-array-button-size;
+      height: $dcp-form-array-button-size;
+      padding: 0 !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      .v-icon,
+      [class*="mdi-"] {
+        margin: 0;
+        width: $dcp-form-array-button-icon-size;
+        height: $dcp-form-array-button-icon-size;
+        font-size: $dcp-form-array-button-icon-size;
+        line-height: $dcp-form-array-button-icon-size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .dcp-form_array_error {
+    margin-left: $dcp-form-array-error-margin-left;
+    margin-right: $dcp-form-array-error-margin-right;
+    padding: 0 !important;
+  }
+}
+

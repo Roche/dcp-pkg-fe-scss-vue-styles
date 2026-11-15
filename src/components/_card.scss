@@ -1,0 +1,33 @@
+// Variables for customization
+$card-bg: #fff !default;
+$card-border: 1px solid #ddd !default;
+$card-border-radius: 0.25rem !default;
+$card-padding: 1rem !default;
+$card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !default;
+
+// Card Styles
+.dcp-card {
+    background-color: $card-bg;
+    border: $card-border;
+    border-radius: $card-border-radius;
+    padding: $card-padding;
+    box-shadow: $card-shadow;
+
+    .dcp-card-header {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .dcp-card-body {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .dcp-card-footer {
+        font-size: 0.875rem;
+        color: #666;
+        border-top: 1px solid #eee;
+        padding-top: 0.5rem;
+    }
+}

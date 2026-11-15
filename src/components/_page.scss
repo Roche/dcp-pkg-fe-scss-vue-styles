@@ -1,0 +1,119 @@
+@use '@open-dcp/styles/src/abstracts/variables' as *;
+
+.paper-content {
+    background: $white;
+    border-radius: 5px;
+    margin-right: 0;
+    margin-left: 0;
+
+    &_title {
+        color: $button-disabled-color;
+        font-size: $font-size-base * 1.25;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.93px;
+    }
+
+    &--ng-content:empty {
+        display: none;
+    }
+}
+
+
+.dc-content {
+
+    --header-height: 80px;
+    --side-menu-min-width: 80px;
+
+    --main-padding: 100px;
+
+
+    &.page-editor {
+        --bottom-bar-height: 60px;
+
+        &--with-bottom-bar {
+            padding-bottom: calc(var(--bottom-bar-height) + 3rem) !important;
+        }
+
+        .page-editor_bottom-bar {
+            position: fixed !important;
+            bottom: 0;
+            left: 0;
+            width: 100% !important;
+            height: var(--bottom-bar-height) !important;
+            background: #fff !important;
+            z-index: 2;
+        }
+
+        .page-editor_button {
+            &-back {
+                color: color-mix(in srgb, var(--dcp-branding-primary-color, #{$branding-primary-color}) 55%, white) !important;
+            }
+        }
+    }
+
+    position: relative;
+    height: calc(100vh - var(--header-height));
+    width: calc(100vw - var(--side-menu-min-width));
+    overflow-y: auto;
+    padding-left: calc(var(--main-padding) + 3rem);
+    padding-right: calc(var(--main-padding) + 3rem);
+    padding-bottom: $spacer * 3;
+    padding-top: $spacer * 1.5;
+
+    &--loading {
+        overflow-y: hidden;
+
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: '';
+            cursor: wait;
+            z-index: 20000;
+        }
+    }
+
+    &_header {
+        padding-bottom: $spacer * 1.5;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &_title {
+        margin-bottom: 0;
+        font-size: $font-size-base * 1.5;
+        font-weight: 300;
+        color: $text-color-dark;
+    }
+
+    &_footer {
+        padding-left: calc(var(--main-padding) + 3rem) !important;
+        padding-right: calc(var(--main-padding) + 3rem) !important;
+    }
+}
+
+.page-create-menu {
+    display: flex;
+    flex-direction: row;
+    &_buttons {
+        display: flex;
+        flex-direction: row;
+        margin-right: 10px;
+        gap: 10px;
+    }
+    &_button {
+        &-show-extra {
+            padding: 0;
+            width: 36px;
+            min-width: 36px;
+            height: 36px;
+            font-size: 14px;
+            line-height: 36px;
+            font-weight: bold;
+        }
+    }
+}

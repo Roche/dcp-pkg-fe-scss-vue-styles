@@ -1,0 +1,81 @@
+@use '@open-dcp/styles/src/abstracts/variables' as *;
+
+.dcp-textarea {
+    position: relative;
+
+    // Textarea field
+    textarea {
+        width: 100%;
+        padding: 10px 12px 5px 0;
+        font-size: $font-size-base;
+        border: none; // Remove border
+        border-radius: 0;
+        outline: none;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: var(--dcp-branding-primary-color, #{$branding-primary-color});
+        transition: box-shadow 0.2s ease, background-color 0.2s ease;
+        resize: vertical; // Allow vertical resizing of the textarea
+
+        &:focus,
+        &:active {
+            background-color: $white; // White background on focus/active
+            box-shadow: none; // Highlight with a subtle focus ring
+        }
+
+        &:focus+label,
+        &:not(:placeholder-shown)+label {
+            transform: translateY(-20px);
+            font-size: $font-size-sm;
+        }
+
+        &:disabled {
+            background-color: $disabled-color; // Light gray for disabled
+            cursor: not-allowed;
+            box-shadow: none; // Remove focus ring
+        }
+
+        &.error {
+            border-bottom-color: $danger-color;
+        }
+    }
+
+    // Label
+    label {
+        position: absolute;
+        top: $spacer-half;
+        left: 0;
+        font-size: $font-size-base;
+        color: var(--dcp-branding-primary-color, #{$branding-primary-color});
+        pointer-events: none;
+        transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+        text-transform: uppercase;
+
+        &.disabled {
+            color: $text-color-disabled; // Dimmed color for disabled state
+        }
+
+        &.error {
+            color: $danger-color;
+        }
+    }
+
+    // Error message
+    .dcp-textarea__error-message {
+        font-size: $font-size-sm;
+        color: $danger-color;
+        margin-top: $spacer-half;
+    }
+
+    // Disabled state
+    &.disabled {
+        textarea {
+            background-color: $disabled-color;
+            cursor: not-allowed;
+        }
+
+        label {
+            color: $text-color-disabled;
+        }
+    }
+}

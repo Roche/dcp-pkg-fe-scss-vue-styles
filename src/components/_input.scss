@@ -1,0 +1,80 @@
+@use '@open-dcp/styles/src/abstracts/variables' as *;
+
+.dcp-input {
+  padding-bottom: 22px;
+
+  // Input field
+  input {
+    padding-left: 4px;
+  }
+
+  .v-field__outline {
+    color: var(--dcp-branding-primary-color, #{$branding-primary-color});
+  }
+
+  &--required {
+    label:after, .v-label:after {
+      content: ' *';
+    }
+  }
+  // Label
+  .v-label {
+    color: var(--dcp-branding-primary-color, #{$branding-primary-color});
+    transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    text-transform: uppercase;
+    opacity: 1;
+    margin-left: 4px;
+  }
+
+  // Error message
+  .dcp-input__error-message {
+    font-size: $font-size-sm;
+    color: $danger-color;
+    margin-top: $spacer-half;
+    position: absolute;
+    bottom: 0;
+    animation: animateErrorSlide 0.3s ease;
+  }
+
+  &.error {
+    .v-field__outline, label, .v-label.v-field-label {
+      color:  $danger-color;
+    }
+  }
+
+  // Disabled state
+  &.disabled {
+    input {
+      background-color: $disabled-color;
+      cursor: not-allowed;
+    }
+
+    label {
+      color: $text-color-disabled;
+    }
+  }
+}
+
+.v-textarea {
+  textarea {
+    padding-left: 4px;
+  }
+  .v-label {
+    color: var(--dcp-branding-primary-color, #{$branding-primary-color});
+    transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    text-transform: uppercase;
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
+@keyframes animateErrorSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

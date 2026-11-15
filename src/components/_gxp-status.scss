@@ -1,0 +1,41 @@
+@use '@open-dcp/styles/src/abstracts/variables' as *;
+
+// Mixin to handle sizes
+@mixin size($height, $font-size, $line-height, $padding) {
+    height: $height;
+    font-size: $font-size;
+    line-height: $line-height;
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
+.dcp-gxp-status {
+    color: $white;
+    border-radius: 5px;
+    font-weight: 700;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.gxp {
+        background-color: $gxp-green;
+    }
+
+    &.non-gxp {
+        background-color: $gxp-red;
+    }
+
+    // Default size
+    @include size(1.5rem, 0.75rem, 1rem, 0.5rem);
+
+    // Modifier for small size
+    &--small {
+        @include size(1rem, 0.625rem, 0.875rem, 0.25rem);
+    }
+
+    // Modifier for large size
+    &--large {
+        @include size(2rem, 1rem, 1.25rem, 0.75rem);
+    }
+}

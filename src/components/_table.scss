@@ -1,0 +1,53 @@
+// Import variables
+@use '@open-dcp/styles/src/abstracts/variables' as *;
+@use 'sass:color';
+
+// Table Container
+.dcp-table-container {
+    height: 400px;
+    overflow-y: auto;
+
+    table {
+        width: 100%;
+        table-layout: fixed;
+        margin: 0;
+        max-width: none;
+        border-width: 0;
+        border-color: inherit;
+        border-collapse: separate;
+        border-spacing: 0;
+        empty-cells: show;
+        outline: 0;
+
+        td,
+        th {
+            padding: 8px;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        th {
+            font-weight: bold;
+            border-bottom: 1px solid color-mix(in srgb, var(--dcp-branding-primary-color, #{$branding-primary-color}) 55%, white);
+
+            i {
+                color: $text-color-light;
+            }
+        }
+
+        td {
+            border-bottom: 1px solid color-mix(in srgb, var(--dcp-branding-primary-color, #{$branding-primary-color}) 55%, white);
+        }
+
+        tr.firstRow > td,
+        tr.lastRow > td {
+            padding: 0;
+        }
+
+        tr.lastRow > td {
+            border: 0;
+        }
+    }
+}
